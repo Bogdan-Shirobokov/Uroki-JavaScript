@@ -29,7 +29,7 @@ onCliBut.onclick=function () {
     if (text === '') {
         document.querySelector('.input-group div.invalid-feedback.empty').style.display = 'block';
         return;
-    }
+   }
     if (wordsStringToArray(text).length < 2 ) {
         document.querySelector('.input-group div.invalid-feedback.minvalue').style.display = 'block';
         return;
@@ -71,18 +71,39 @@ butTopThree.onclick=function () {
   let  elem =+ a+b;
   let toBeInserted1 ='';
   const element1 = document.querySelector('table.table tbody');
-  toBeInserted1 += `<tr><th scope="row">${a}</th><td>${b}</td><td>${elem}</td></tr>`;
+  toBeInserted1 += `<tr><th scope="row">${''}</th><td>${''}</td><td>${''}</td></tr>`;
   element1.innerHTML = toBeInserted1;
 }
 
 butBottomThree.onclick=function () {
 
-   /* const element2 = document.querySelector('table.table tbody');
-    let toBeInserted2 = '';
+    const element1 = document.querySelector('table.table tbody');
+    let toBeInserted1 = '';
+    let s =1;
+    const text3 = document.getElementById('textForAnalysis').value;
+    let tzu = frequencyDictionary(text3);
+let oout ='';
+    for (let i =0; i< tzu.length;i++){
+        oout +=tzu[i] ;
+        for (let k=0;k<oout.length;k++){
+
+           /* oout.sort(a,b){
+                return a-b
+
+            }*/
+
+            toBeInserted1 += `<tr><th scope="row">${s++}</th><td>${oout}</td><td>${oout[k]}</td></tr>`;
+        }
+
+    }
+
+    element1.innerHTML = toBeInserted1;
+
+   /*
     let k = 1;
     for (let i = 1; i < zzz; i++) {
 
-        toBeInserted2 += `<tr><th scope="row">${k++}</th><td>${zzz}</td><td>${tttt}</td></tr>`;
+
 */
 
       /*  let r = ' ALFAVIT ';
@@ -92,7 +113,7 @@ butBottomThree.onclick=function () {
         toBeInserted2 += `<tr><th scope="row">${r}</th><td>${t}</td><td>${ttt}</td></tr>`;
        */
   /*
-    element2.innerHTML = toBeInserted2;*/
+    */
 }
 butShowAll.onclick=function () {
     const text1 = document.getElementById('textForAnalysis').value;
